@@ -33,6 +33,12 @@
       <string>sms</string>
       <string>tel</string>
     </array>
+    <key>NSCameraUsageDescription</key>
+        <string>For image upload and verification</string>
+        <key>NSPhotoLibraryUsageDescription</key>
+        <string>For image upload and ID verification</string>
+        <key>NSMicrophoneUsageDescription</key>
+        <string>This app uses the microphone for videos</string>
     <key>LSApplicationQueriesSchemes</key>
     <array>
       <string>whatsapp</string>
