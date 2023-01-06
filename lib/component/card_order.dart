@@ -1,4 +1,6 @@
+import 'package:donation_dashboard/component/custom_button.dart';
 import 'package:donation_dashboard/constants.dart';
+import 'package:donation_dashboard/helper/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class CustomCardOrder extends StatelessWidget {
@@ -29,7 +31,7 @@ class CustomCardOrder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+      margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       color: K.whiteColor,
       elevation: 2,
       shape: RoundedRectangleBorder(
@@ -41,7 +43,7 @@ class CustomCardOrder extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20),
             clipBehavior: Clip.antiAlias,
             width: double.infinity,
-            height: 30,
+            height: K.height * 0.05,
             decoration: const BoxDecoration(
                 color: K.mainColor,
                 borderRadius: BorderRadius.only(
@@ -51,14 +53,14 @@ class CustomCardOrder extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(date!,
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: K.whiteColor,
-                      fontSize: 18,
+                      fontSize: Dimensions.fontSizeLarge,
                     )),
-                const Text(":تاريخ و وقت الطلب",
+                Text(":تاريخ و وقت الطلب",
                     style: TextStyle(
                         color: K.whiteColor,
-                        fontSize: 18,
+                        fontSize: Dimensions.fontSizeLarge,
                         fontWeight: FontWeight.bold)),
               ],
             ),
@@ -67,22 +69,25 @@ class CustomCardOrder extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const SizedBox(width: 25),
-              const Expanded(
+              Expanded(
                 child: Text(
                   "دينار",
-                  style: TextStyle(color: K.blackColor, fontSize: 15),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
               Expanded(
                 child: Text(
                   price!,
-                  style: const TextStyle(color: K.blackColor, fontSize: 15),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
-              const Expanded(
+              Expanded(
                 child: Text(
                   ": السعر",
-                  style: TextStyle(color: K.blackColor, fontSize: 18),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
             ],
@@ -91,22 +96,25 @@ class CustomCardOrder extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const SizedBox(width: 25),
-              const Expanded(
+              Expanded(
                 child: Text(
                   "دينار",
-                  style: TextStyle(color: K.blackColor, fontSize: 15),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
               Expanded(
                 child: Text(
                   send!,
-                  style: const TextStyle(color: K.blackColor, fontSize: 15),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
-              const Expanded(
+              Expanded(
                 child: Text(
                   ": التوصيل",
-                  style: TextStyle(color: K.blackColor, fontSize: 18),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
             ],
@@ -115,22 +123,25 @@ class CustomCardOrder extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const SizedBox(width: 25),
-              const Expanded(
+              Expanded(
                 child: Text(
                   "دينار",
-                  style: TextStyle(color: K.blackColor, fontSize: 15),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
               Expanded(
                 child: Text(
                   tax!,
-                  style: const TextStyle(color: K.blackColor, fontSize: 15),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
-              const Expanded(
+              Expanded(
                 child: Text(
                   ": الضريبه",
-                  style: TextStyle(color: K.blackColor, fontSize: 18),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
             ],
@@ -139,22 +150,25 @@ class CustomCardOrder extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const SizedBox(width: 25),
-              const Expanded(
+              Expanded(
                 child: Text(
                   "دينار",
-                  style: TextStyle(color: K.blackColor, fontSize: 15),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
               Expanded(
                 child: Text(
                   additional!,
-                  style: const TextStyle(color: K.blackColor, fontSize: 15),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
-              const Expanded(
+              Expanded(
                 child: Text(
                   ": خدمات اضافيه",
-                  style: TextStyle(color: K.blackColor, fontSize: 18),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
             ],
@@ -163,22 +177,25 @@ class CustomCardOrder extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const SizedBox(width: 25),
-              const Expanded(
+              Expanded(
                 child: Text(
                   "دينار",
-                  style: TextStyle(color: K.blackColor, fontSize: 15),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
               Expanded(
                 child: Text(
                   discount!,
-                  style: const TextStyle(color: K.blackColor, fontSize: 15),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
-              const Expanded(
+              Expanded(
                 child: Text(
                   ": الخصم",
-                  style: TextStyle(color: K.blackColor, fontSize: 18),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
             ],
@@ -187,22 +204,25 @@ class CustomCardOrder extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               const SizedBox(width: 25),
-              const Expanded(
+              Expanded(
                 child: Text(
                   "دينار",
-                  style: TextStyle(color: K.blackColor, fontSize: 15),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
               Expanded(
                 child: Text(
                   totalSalary!,
-                  style: const TextStyle(color: K.blackColor, fontSize: 15),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
-              const Expanded(
+              Expanded(
                 child: Text(
                   ": اجمالى السعر",
-                  style: TextStyle(color: K.blackColor, fontSize: 18),
+                  style: TextStyle(
+                      color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
                 ),
               ),
             ],
@@ -212,11 +232,13 @@ class CustomCardOrder extends StatelessWidget {
             children: [
               Text(
                 paymentMethod!,
-                style: const TextStyle(color: K.blueColor, fontSize: 15),
+                style: TextStyle(
+                    color: K.blueColor, fontSize: Dimensions.fontSizeLarge),
               ),
-              const Text(
+              Text(
                 "طريقه الدفع",
-                style: TextStyle(color: K.blackColor, fontSize: 18),
+                style: TextStyle(
+                    color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
               ),
             ],
           ),
@@ -225,31 +247,25 @@ class CustomCardOrder extends StatelessWidget {
             children: [
               Text(
                 status!,
-                style: const TextStyle(color: K.mainColor, fontSize: 15),
+                style: TextStyle(
+                    color: K.mainColor, fontSize: Dimensions.fontSizeLarge),
               ),
-              const Text(
+              Text(
                 ":حاله الطلب",
-                style: TextStyle(color: K.blackColor, fontSize: 18),
+                style: TextStyle(
+                    color: K.blackColor, fontSize: Dimensions.fontSizeLarge),
               ),
             ],
           ),
-          SizedBox(
-            height: 40,
-            width: K.width - 50,
-            child: TextButton(
-              onPressed: onTap,
-              style: TextButton.styleFrom(
-                  backgroundColor: K.mainColor,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25))),
-              child: const Text(
-                "تفاصيل الطلب",
-                style: TextStyle(fontSize: 15, color: K.whiteColor),
-              ),
-            ),
+          CustomButton(
+            buttonText: "تفاصيل  الطلب",
+            onPressed: onTap,
+            radius: Dimensions.radiusExtraLarge,
+            width: Dimensions.width / 1.2,
+            height: Dimensions.height * 0.04,
           ),
           const SizedBox(
-            height: 10,
+            height: Dimensions.radiusDefault,
           )
         ],
       ),

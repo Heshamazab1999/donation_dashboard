@@ -1,6 +1,7 @@
 import 'package:donation_dashboard/component/custom_button.dart';
 import 'package:donation_dashboard/component/custom_card_dtails.dart';
 import 'package:donation_dashboard/constants.dart';
+import 'package:donation_dashboard/helper/dimensions.dart';
 import 'package:donation_dashboard/screens/product_details/controller/order_details_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,29 +25,30 @@ class ProductDetailsScreen extends StatelessWidget {
               icon: const Icon(Icons.arrow_forward_ios))
         ],
         centerTitle: true,
-        title: const Text("تفاصيل الطلب",
-            style: TextStyle(fontSize: 20, color: K.whiteColor)),
+        title: Text("تفاصيل الطلب",
+            style: TextStyle(
+                fontSize: Dimensions.fontSizeExtraLarge, color: K.whiteColor)),
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: const [
-              Spacer(),
+            children: [
+              const Spacer(),
               Text(
                 "zozo",
                 style: TextStyle(
                     color: K.hintColor,
-                    fontSize: 14,
+                    fontSize: Dimensions.fontSizeLarge,
                     fontWeight: FontWeight.bold),
               ),
-              Spacer(),
+              const Spacer(),
               Text(
                 ": اسم العميل",
                 style: TextStyle(
                     color: K.hintColor,
-                    fontSize: 16,
+                    fontSize: Dimensions.fontSizeLarge,
                     fontWeight: FontWeight.bold),
               ),
             ],
@@ -63,19 +65,19 @@ class ProductDetailsScreen extends StatelessWidget {
                     color: K.mainColor,
                   )),
               const Spacer(),
-              const Text(
+              Text(
                 "0100479160",
                 style: TextStyle(
                     color: K.hintColor,
-                    fontSize: 14,
+                    fontSize: Dimensions.fontSizeLarge,
                     fontWeight: FontWeight.bold),
               ),
               const Spacer(),
-              const Text(
+              Text(
                 ":  رقم التليفون",
                 style: TextStyle(
                     color: K.hintColor,
-                    fontSize: 16,
+                    fontSize: Dimensions.fontSizeLarge,
                     fontWeight: FontWeight.bold),
               ),
             ],
@@ -90,37 +92,29 @@ class ProductDetailsScreen extends StatelessWidget {
                     color: K.mainColor,
                   )),
               const Spacer(),
-              const Text(
+              Text(
                 "alex",
                 style: TextStyle(
                     color: K.hintColor,
-                    fontSize: 16,
+                    fontSize: Dimensions.fontSizeLarge,
                     fontWeight: FontWeight.bold),
               ),
               const Spacer(),
-              const Text(
+              Text(
                 ":  العنوان",
                 style: TextStyle(
                     color: K.hintColor,
-                    fontSize: 16,
+                    fontSize: Dimensions.fontSizeLarge,
                     fontWeight: FontWeight.bold),
               ),
             ],
           ),
-          SizedBox(
-            height: 35,
-            width: K.width - 50,
-            child: TextButton(
-              onPressed: () {},
-              style: TextButton.styleFrom(
-                  backgroundColor: K.mainColor,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(5))),
-              child: const Text(
-                "لا توجد رساله",
-                style: TextStyle(color: K.whiteColor, fontSize: 14),
-              ),
-            ),
+          CustomButton(
+            buttonText: "تفاصيل  الطلب",
+            onPressed: () {},
+            radius: Dimensions.radiusDefault,
+            width: Dimensions.width / 1.2,
+            height: Dimensions.height * 0.04,
           ),
           const SizedBox(height: 10),
           const CustomCardDetails(
@@ -139,17 +133,17 @@ class ProductDetailsScreen extends StatelessWidget {
               CustomButton(
                 buttonText: "قبول الطلب",
                 onPressed: () {},
-                radius: 4,
-                width: 100,
-                height: 30,
+                radius: Dimensions.radiusDefault,
+                width: Dimensions.width / 3,
+                height: Dimensions.height * 0.04,
               ),
               const Spacer(),
               CustomButton(
                 buttonText: "رفض الطلب",
                 onPressed: () {},
-                radius: 4,
-                width: 100,
-                height: 30,
+                radius: Dimensions.radiusDefault,
+                width: Dimensions.width / 3,
+                height: Dimensions.height * 0.04,
               ),
               const Spacer(),
             ],

@@ -4,4 +4,5 @@ class AppRoute {
   static const String orderScreen = '/OrderScreen';
   static const String categoryScreen = '/CategoryScreen';
   static const String productDetailsScreen = '/ProductDetailsScreen';
+  static const String contactScreen = '/ContactScreen';
 }

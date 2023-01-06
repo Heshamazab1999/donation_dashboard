@@ -1,5 +1,7 @@
 import 'package:donation_dashboard/constants.dart';
+import 'package:donation_dashboard/routes/app_route.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -35,28 +37,33 @@ class MainScreen extends StatelessWidget {
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
           ),
-          itemBuilder: (_, index) => Material(
-                borderRadius: BorderRadius.circular(10),
-                color: K.whiteColor,
-                elevation: 1,
-                shadowColor: K.hintColor,
-                child: Container(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(Icons.ac_unit),
-                      Text(
-                        "عملاء",
-                        style: TextStyle(
-                            color: K.blackColor,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold),
-                      )
-                    ],
+          itemBuilder: (_, index) => GestureDetector(
+                onTap: () {
+                  Get.toNamed(AppRoute.contactScreen);
+                },
+                child: Material(
+                  borderRadius: BorderRadius.circular(10),
+                  color: K.whiteColor,
+                  elevation: 1,
+                  shadowColor: K.hintColor,
+                  child: Container(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(Icons.ac_unit),
+                        Text(
+                          "عملاء",
+                          style: TextStyle(
+                              color: K.blackColor,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                    decoration: BoxDecoration(
+                        color: K.whiteColor,
+                        borderRadius: BorderRadius.circular(10)),
                   ),
-                  decoration: BoxDecoration(
-                      color: K.whiteColor,
-                      borderRadius: BorderRadius.circular(10)),
                 ),
               )),
     );

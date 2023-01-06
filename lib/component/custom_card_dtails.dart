@@ -1,5 +1,6 @@
 import 'package:donation_dashboard/component/custom_image.dart';
 import 'package:donation_dashboard/constants.dart';
+import 'package:donation_dashboard/helper/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class CustomCardDetails extends StatelessWidget {
@@ -30,9 +31,9 @@ class CustomCardDetails extends StatelessWidget {
             children: [
               Text(
                 name!,
-                style: const TextStyle(
+                style: TextStyle(
                   color: K.whiteColor,
-                  fontSize: 16,
+                  fontSize: Dimensions.fontSizeLarge,
                 ),
               ),
               Row(
@@ -50,22 +51,25 @@ class CustomCardDetails extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   const Spacer(),
-                                  const Text(
+                                  Text(
                                     "دينار",
                                     style: TextStyle(
-                                        color: K.blackColor, fontSize: 15),
+                                        color: K.blackColor,
+                                        fontSize: Dimensions.fontSizeLarge),
                                   ),
                                   const Spacer(),
                                   Text(
                                     price!,
-                                    style: const TextStyle(
-                                        color: K.blackColor, fontSize: 15),
+                                    style: TextStyle(
+                                        color: K.blackColor,
+                                        fontSize: Dimensions.fontSizeLarge),
                                   ),
                                   const Spacer(),
-                                  const Text(
+                                  Text(
                                     ": السعر",
                                     style: TextStyle(
-                                        color: K.mainColor, fontSize: 18),
+                                        color: K.mainColor,
+                                        fontSize: Dimensions.fontSizeLarge),
                                   ),
                                 ],
                               ),
@@ -76,14 +80,16 @@ class CustomCardDetails extends StatelessWidget {
                                   const Spacer(),
                                   Text(
                                     number!,
-                                    style: const TextStyle(
-                                        color: K.blackColor, fontSize: 15),
+                                    style: TextStyle(
+                                        color: K.blackColor,
+                                        fontSize: Dimensions.fontSizeLarge),
                                   ),
                                   const Spacer(),
-                                  const Text(
+                                  Text(
                                     ": العدد",
                                     style: TextStyle(
-                                        color: K.mainColor, fontSize: 18),
+                                        color: K.mainColor,
+                                        fontSize: Dimensions.fontSizeLarge),
                                   ),
                                 ],
                               ),
@@ -94,22 +100,25 @@ class CustomCardDetails extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
                                   const Spacer(),
-                                  const Text(
+                                  Text(
                                     "دينار",
                                     style: TextStyle(
-                                        color: K.blackColor, fontSize: 15),
+                                        color: K.blackColor,
+                                        fontSize: Dimensions.fontSizeLarge),
                                   ),
                                   const Spacer(),
                                   Text(
                                     totalPrice!,
-                                    style: const TextStyle(
-                                        color: K.blackColor, fontSize: 15),
+                                    style: TextStyle(
+                                        color: K.blackColor,
+                                        fontSize: Dimensions.fontSizeLarge),
                                   ),
                                   const Spacer(),
-                                  const Text(
+                                  Text(
                                     ": الاجمالى",
                                     style: TextStyle(
-                                        color: K.mainColor, fontSize: 18),
+                                        color: K.mainColor,
+                                        fontSize: Dimensions.fontSizeLarge),
                                   ),
                                 ],
                               ),
@@ -123,35 +132,39 @@ class CustomCardDetails extends StatelessWidget {
                     flex: 1,
                     child: CustomImage(
                       image: image!,
-                      height: 110,
-                      width: 100,
+                      height: Dimensions.height * 0.11,
                     ),
                   ),
                 ],
               ),
+              const SizedBox(height: 1),
               Row(
                 children: [
                   Expanded(
                     flex: 3,
                     child: Container(
-                      height: 30,
+                      height: Dimensions.height * 0.05,
                       decoration: const BoxDecoration(
                           color: K.whiteColor,
                           borderRadius: BorderRadius.only(
                               bottomLeft: Radius.circular(5))),
-                      child:  Center(
+                      child: Center(
                           child: Text(
                         message!,
-                        style:const TextStyle(color: K.mainColor, fontSize: 15),
+                        style: TextStyle(
+                            color: K.mainColor,
+                            fontSize: Dimensions.fontSizeLarge),
                       )),
                     ),
                   ),
-                  const Expanded(
+                  Expanded(
                       flex: 1,
                       child: Center(
                         child: Text(
                           ":الرسائل",
-                          style: TextStyle(color: K.whiteColor),
+                          style: TextStyle(
+                              color: K.whiteColor,
+                              fontSize: Dimensions.fontSizeLarge),
                         ),
                       )),
                 ],
