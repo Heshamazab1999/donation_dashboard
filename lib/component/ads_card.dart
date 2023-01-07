@@ -4,7 +4,8 @@ import 'package:donation_dashboard/helper/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class AdsCard extends StatelessWidget {
-  const AdsCard({Key? key}) : super(key: key);
+  const AdsCard({Key? key, this.image}) : super(key: key);
+  final String? image;
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +18,8 @@ class AdsCard extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(Dimensions.radiusDefault),
             border: Border.all(color: K.mainColor)),
-        child: const CustomImage(
-          image:
-              "https://cdn.esawebb.org/archives/images/screen/carinanebula3.jpg",
+        child:  CustomImage(
+          image: image!,
           fit: BoxFit.cover,
         ),
       ),

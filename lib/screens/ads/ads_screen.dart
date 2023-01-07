@@ -1,10 +1,12 @@
 import 'package:donation_dashboard/component/ads_card.dart';
 import 'package:donation_dashboard/component/custom_bottom_bar.dart';
 import 'package:donation_dashboard/constants.dart';
+import 'package:donation_dashboard/enum/view_state.dart';
 import 'package:donation_dashboard/helper/dimensions.dart';
 import 'package:donation_dashboard/screens/ads/controller/ads_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class AdsScreen extends StatelessWidget {
   const AdsScreen({Key? key}) : super(key: key);
@@ -34,11 +36,27 @@ class AdsScreen extends StatelessWidget {
               color: K.whiteColor, fontSize: Dimensions.fontSizeExtraLarge),
         ),
       ),
-      body: ListView.builder(
-          itemCount: 4,
-          shrinkWrap: true,
-          physics: const BouncingScrollPhysics(),
-          itemBuilder: (_, index) => AdsCard()),
+      body: SmartRefresher(
+        controller: controller.refreshController,
+        enablePullDown: true,
+        enablePullUp: false,
+        onRefresh: () {
+          controller.onInit();
+          controller.refreshController.refreshCompleted();
+        },
+        child: Obx(() => controller.state == ViewState.busy
+            ? const Center(
+                child: CircularProgressIndicator(
+                color: K.mainColor,
+              ))
+            : ListView.builder(
+                itemCount: controller.listOfAds.length,
+                shrinkWrap: true,
+                physics: const BouncingScrollPhysics(),
+                itemBuilder: (_, index) => AdsCard(
+                      image: controller.listOfAds[index].image,
+                    ))),
+      ),
       bottomNavigationBar: ClipPath(
         clipper: MyClipper(80),
         child: Container(
