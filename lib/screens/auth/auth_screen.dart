@@ -17,9 +17,9 @@ class SignScreen extends StatelessWidget {
       body: Align(
         alignment: Alignment.center,
         child: Padding(
-          padding: const EdgeInsets.all(4),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Container(
-            height: Dimensions.height * 0.38,
+            height: Dimensions.height * 0.4,
             decoration: BoxDecoration(
                 color: K.whiteColor, borderRadius: BorderRadius.circular(10)),
             child: Column(
@@ -95,7 +95,7 @@ class SignScreen extends StatelessWidget {
                         onPressed: () {
                           controller.login();
                         },
-                        width: Dimensions.width - 20,
+                        width: Dimensions.width - 50,
                         radius: Dimensions.radiusDefault,
                         height: Dimensions.height * 0.045,
                         buttonText: "تسجيل الدخول",

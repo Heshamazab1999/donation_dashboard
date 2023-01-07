@@ -1,5 +1,6 @@
 class AppRoute {
-  static const String homeScreen = '/';
+  static const String splashScreen = '/';
+  static const String homeScreen = '/HomeScreen';
   static const String mainScreen = '/MainScreen';
   static const String orderScreen = '/OrderScreen';
   static const String categoryScreen = '/CategoryScreen';

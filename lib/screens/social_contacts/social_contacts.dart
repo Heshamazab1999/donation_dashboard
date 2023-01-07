@@ -149,6 +149,14 @@ class SocialContactScreen extends StatelessWidget {
                     width: Dimensions.width - 20,
                     onPressed: () {
                       controller.saveSocial();
+                      controller.emailController.clear();
+                      controller.facebookController.clear();
+                      controller.instagramController.clear();
+                      controller.twitterController.clear();
+                      controller.snapchatController.clear();
+                      controller.phone1Controller.clear();
+                      controller.phone2Controller.clear();
+                      controller.phone3Controller.clear();
                     },
                     buttonText: "حفظ",
                   )),

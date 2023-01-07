@@ -9,10 +9,12 @@ import 'package:donation_dashboard/screens/main_screen/main_screen.dart';
 import 'package:donation_dashboard/screens/order_screen/order_screen.dart';
 import 'package:donation_dashboard/screens/product_details/product_details.dart';
 import 'package:donation_dashboard/screens/social_contacts/social_contacts.dart';
+import 'package:donation_dashboard/screens/splash/splash_screen.dart';
 import 'package:get/get.dart';
 
 class AppScreens {
   static final screens = [
+    GetPage(name: AppRoute.splashScreen, page: () => const SplashScreen()),
     GetPage(name: AppRoute.homeScreen, page: () => const HomeScreen()),
     GetPage(name: AppRoute.categoryScreen, page: () => const CategoryScreen()),
     GetPage(name: AppRoute.mainScreen, page: () => const MainScreen()),

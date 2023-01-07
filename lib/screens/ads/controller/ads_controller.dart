@@ -36,4 +36,8 @@ class AdsController extends BaseController {
       print(e.toString());
     }
   }
+
+  Stream<List<AdsModel>> getAllAds() {
+    return service.getAllAds();
+  }
 }

@@ -80,8 +80,13 @@ class AuthController extends BaseController {
   }
 
   login() async {
-    _loading.value = true;
-    await services.getUserByEmail(_password.value.value!, _email.value.value!);
-    _loading.value = false;
+    try {
+      _loading.value = true;
+      await services.getUserByEmail(
+          _password.value.value!, _email.value.value!);
+      _loading.value = false;
+    } catch (e) {
+      _loading.value = false;
+    }
   }
 }

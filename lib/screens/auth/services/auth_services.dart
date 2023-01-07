@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:donation_dashboard/component/custom_snackbar.dart';
 import 'package:donation_dashboard/model/user_model.dart';
 import 'package:donation_dashboard/routes/app_route.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -20,6 +21,8 @@ class AuthService {
       Get.toNamed(AppRoute.homeScreen);
       return user;
     }
+    showCustomSnackBar(
+        message: "خطاء فى الوصول الى المستخدم", isError: true);
     throw "Wrong to find your Email !";
   }
 }

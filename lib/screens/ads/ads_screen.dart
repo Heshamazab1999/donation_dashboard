@@ -4,6 +4,7 @@ import 'package:donation_dashboard/constants.dart';
 import 'package:donation_dashboard/enum/view_state.dart';
 import 'package:donation_dashboard/helper/dimensions.dart';
 import 'package:donation_dashboard/screens/ads/controller/ads_controller.dart';
+import 'package:donation_dashboard/screens/ads/model/ads_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -49,13 +50,23 @@ class AdsScreen extends StatelessWidget {
                 child: CircularProgressIndicator(
                 color: K.mainColor,
               ))
-            : ListView.builder(
-                itemCount: controller.listOfAds.length,
-                shrinkWrap: true,
-                physics: const BouncingScrollPhysics(),
-                itemBuilder: (_, index) => AdsCard(
-                      image: controller.listOfAds[index].image,
-                    ))),
+            : StreamBuilder<List<AdsModel>>(
+                stream: controller.getAllAds(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+                    return ListView.builder(
+                        itemCount: snapshot.data!.length,
+                        shrinkWrap: true,
+                        physics: const BouncingScrollPhysics(),
+                        itemBuilder: (_, index) => AdsCard(
+                              image: snapshot.data![index].image,
+                            ));
+                  } else {
+                    return const Center(
+                      child: CircularProgressIndicator(color: K.mainColor),
+                    );
+                  }
+                })),
       ),
       bottomNavigationBar: ClipPath(
         clipper: MyClipper(80),

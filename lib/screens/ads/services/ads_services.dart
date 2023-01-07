@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -24,5 +25,14 @@ class AdsServices {
   Future<List<AdsModel>> getAds() async {
     final data = await store.collection("ads").get();
     return data.docs.map((e) => AdsModel.fromJson(e)).toList();
+  }
+
+  Stream<List<AdsModel>> getAllAds() {
+    return store
+        .collection("ads")
+        .snapshots()
+        .transform(StreamTransformer.fromHandlers(handleData: (data, sink) {
+      sink.add(data.docs.map((e) => AdsModel.fromJson(e)).toList());
+    }));
   }
 }

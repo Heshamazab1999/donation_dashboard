@@ -1,4 +1,3 @@
-import 'package:donation_dashboard/constants.dart';
 import 'package:flutter/material.dart';
 
 class MyClipper extends CustomClipper<Path> {
