@@ -3,20 +3,24 @@ import 'package:donation_dashboard/helper/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField(
-      {Key? key,
-      this.hint,
-      this.icon,
-      this.label,
-      this.onChange,
-      this.controller,
-      this.type})
+  const CustomTextField({Key? key,
+    this.hint,
+    this.icon,
+    this.label,
+    this.onChange,
+    this.controller,
+    this.obSecure=false,
+    this.prefixIcon,
+    this.type})
       : super(key: key);
   final Function(String)? onChange;
   final String? label;
   final String? hint;
   final IconData? icon;
   final TextInputType? type;
+  final bool? obSecure;
+  final IconButton? prefixIcon;
+
   final TextEditingController? controller;
 
   @override
@@ -28,7 +32,9 @@ class CustomTextField extends StatelessWidget {
         keyboardType: type,
         onChanged: onChange,
         autofocus: true,
+        obscureText: obSecure!,
         decoration: InputDecoration(
+            prefixIcon: prefixIcon,
             suffixIcon: Icon(icon, color: K.hintColor, size: 25),
             labelText: label!,
             labelStyle: TextStyle(

@@ -8,4 +8,5 @@ class AppRoute {
   static const String adsScreen = '/AdsScreen';
   static const String addProductScreen = '/AddProductScreen';
   static const String socialContactScreen = '/SocialContactScreen';
+  static const String signInScreen = '/SignInScreen';
 }
