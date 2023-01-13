@@ -8,12 +8,14 @@ class PersonalCard extends StatelessWidget {
   const PersonalCard(
       {Key? key,
       this.phone,
-      this.image,
+      // this.image,
+      this.name,
       this.callFunction,
       this.socialFunction})
       : super(key: key);
-  final String? image;
+  // final String? image;
   final String? phone;
+  final String? name;
   final Function()? callFunction;
   final Function()? socialFunction;
 
@@ -29,7 +31,7 @@ class PersonalCard extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              "Kadoura",
+              name!,
               style: TextStyle(
                   color: K.whiteColor,
                   fontSize: Dimensions.fontSizeLarge,
@@ -75,15 +77,13 @@ class PersonalCard extends StatelessWidget {
                       ],
                     ),
                     Container(
-                      clipBehavior: Clip.antiAlias,
-                      height: 100,
-                      width: 100,
-                      decoration: const BoxDecoration(
-                          shape: BoxShape.circle, color: K.mainColor),
-                      child: CustomImage(
-                        image: image,
-                      ),
-                    )
+                        clipBehavior: Clip.antiAlias,
+                        height: 100,
+                        width: 100,
+                        decoration: const BoxDecoration(
+                            shape: BoxShape.circle, color: K.mainColor),
+                        child: Image.asset('assets/images/user.png',
+                            fit: BoxFit.cover))
                   ],
                 ),
               ),

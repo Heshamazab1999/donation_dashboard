@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class K {
-  static const mainColor = Colors.deepOrange;
+  static const mainColor = Color(0xff8EC9A9);
   static const whiteColor = Colors.white;
   static const blackColor = Colors.black;
   static const blueColor = Colors.indigo;

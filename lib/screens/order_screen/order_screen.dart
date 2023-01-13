@@ -1,6 +1,7 @@
 import 'package:donation_dashboard/component/card_order.dart';
 import 'package:donation_dashboard/constants.dart';
 import 'package:donation_dashboard/routes/app_route.dart';
+import 'package:donation_dashboard/screens/order_screen/controller/order_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,6 +10,7 @@ class OrderScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(OrderController());
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(

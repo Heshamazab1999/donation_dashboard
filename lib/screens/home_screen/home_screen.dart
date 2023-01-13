@@ -10,6 +10,11 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(HomeController());
     return Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            controller.sendNotification();
+          },
+        ),
         body: Obx(() => controller.list.elementAt(controller.selectIndex)),
         bottomNavigationBar: Obx(
           () => BottomNavigationBar(
